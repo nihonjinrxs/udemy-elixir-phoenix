@@ -19,10 +19,10 @@ defmodule Discuss.Router do
     get "/", TopicController, :index
     get "/topics/new", TopicController, :new
     post "/topics", TopicController, :create
-    # get "/topics", TopicController, :index
-    # delete "/topics/:id", TopicController, :delete
-    # get "/topics/:id/edit", TopicController, :edit
-    # put "/topics/:id", TopicController, :update
+    get "/topics/:id/edit", TopicController, :edit
+    put "/topics/:id", TopicController, :update
+    delete "/topics/:id", TopicController, :delete
+    # resources "/topics", TopicController # doesn't work for index route
   end
 
   # Other scopes may use custom stacks.
